@@ -2,18 +2,13 @@
 #include "screenshot.h"
 
 #include <QApplication>
-#include <QStandardPaths>
-#include <QDebug>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
 
-    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    qDebug() << path;
     Screenshot screenshot;
-//    sshot.shootScreen();
     Widget w;
     w.show();
 
