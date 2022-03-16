@@ -7,7 +7,7 @@
 #include <QProcess>
 #include <QFileDialog>
 #include <QDesktopServices>
-#include <QDebug>
+
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -71,7 +71,6 @@ Widget::Widget(QWidget *parent)
     connect(ui->btnStop, &QPushButton::clicked, this, &Widget::stopAutoScreenshots);
 
     connect(ui->btnSelectFolder, &QPushButton::clicked, this, &Widget::selectSaveFolder);
-    setMinimumSize(1600,1200);
 
     ui->gb1->setTitle(tr("Location"));
     ui->btnSelectFolder->setText(tr("Select folder"));
@@ -179,4 +178,3 @@ void Widget::disableUi(bool disable)
     ui->btnStartAndHide->setEnabled(!disable);
     ui->btnStop->setEnabled(disable);
 }
-
